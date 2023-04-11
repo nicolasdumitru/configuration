@@ -1,0 +1,7 @@
+# General ignore rules:
+*.db
+*.db.lock
+*.search
+
+# Ignore particular files:
+.newsboat/urls
