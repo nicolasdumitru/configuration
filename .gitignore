@@ -4,4 +4,4 @@
 *.search
 
 # Ignore particular files:
-.newsboat/urls
+.config/newsboat/urls
