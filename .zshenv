@@ -7,7 +7,7 @@
 
 # Additions to $PATH:
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$HOME/.local/go/bin"
 
 # Default programs:
 export EDITOR="nvim"
