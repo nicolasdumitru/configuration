@@ -5,8 +5,9 @@
 # If you don't plan on reverting to bash, you can remove the link in ~/.profile
 # to clean up.
 
-# Adds `~/.local/bin` to $PATH
+# Additions to $PATH:
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH=$PATH:/usr/local/go/bin
 
 # Default programs:
 export EDITOR="nvim"
