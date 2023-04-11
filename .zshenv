@@ -1,9 +1,6 @@
 #!/bin/zsh
-#
-# profile file. Runs on login. Environmental variables are set here.
 
-# If you don't plan on reverting to bash, you can remove the link in ~/.profile
-# to clean up.
+# profile file. Runs on login. Environmental variables are set here.
 
 # Additions to $PATH:
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
