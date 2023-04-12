@@ -4,7 +4,8 @@ set relativenumber
 
 "Search settings (case sensitivity)
 set ignorecase
-set smartcase
+set smartcase 							
 
 "Indentation (number of spaces)
-:set cindent shiftwidth=2
+set cindent shiftwidth=2
+set tabstop=2
