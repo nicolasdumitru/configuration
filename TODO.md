@@ -1,1 +1,3 @@
 create a .zprofile in zdotdir, create .config/shell (as per voidrice) and make .zshenv and .config/zsh/.zprofile point to .config/shell/profile; desired result: unified zsh config + don't have to log out to reload zsh variables
+
+create a private git bare repo for stuff that is not quite public but not quite secret
