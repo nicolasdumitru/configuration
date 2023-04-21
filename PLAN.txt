@@ -1,0 +1,48 @@
+OS:
+distro: Gentoo (hardened + SELinux)
+init: runit
+shell: zsh
+
+Graphical environment:
+wm: dwm
+status bar: TBD
+menu/launcher: dmenu
+
+Audio:
+audio engine: pipewire
+
+Basic programs:
+terminal emulator: alacritty
+text editor: neovim
+web browser: librewolf
+
+Utilities:
+file manager: lf
+image viewer: sxiv
+document viewer (pdf mainly): zathura
+music/audio player: mpd + ncmpcpp (to be reviewed; also check out beet)
+video player: mpv (to be reviewed)
+
+encryption tool: gpg
+password manager: keepassxc
+
+email client: neomutt + isync + msmtp (to be reviewed)
+xmpp client: profanity (to be reviewed)
+rss/atom reader: newsboat
+address book: abook (to be reviewed)
+
+torrent client: transmission (to be reviewed)
+
+vcs: git
+
+document writing: probably whatever https://lukesmith.xyz/programs/ recommends
+presentations: probably whatever https://lukesmith.xyz/programs/ recommends
+spreadsheets: probably whatever https://lukesmith.xyz/programs/ recommends
+
+Miscellaneous:
+screenshot tool: maim (to be reviewed)
+
+Places to find other useful software if necessary (probably necessary):
+https://lukesmith.xyz/programs/ and links listed on this page
+https://github.com/LukeSmithxyz/LARBS/blob/master/static/progs.csv
+in LARBS repo: LARBS/static/progs.csv
