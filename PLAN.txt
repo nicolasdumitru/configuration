@@ -18,6 +18,7 @@ text editor: neovim
 web browser: librewolf
 
 Utilities:
+privilege elevation: (open)doas
 file manager: lf
 image viewer: sxiv
 document viewer (pdf mainly): zathura
