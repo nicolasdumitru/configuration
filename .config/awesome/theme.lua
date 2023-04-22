@@ -27,9 +27,9 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(0)
+theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
-theme.border_normal = "#1d1c1c"
+theme.border_normal = "#222222"
 theme.border_focus  = "#c70036"
 theme.border_marked = "#91231c"
 
@@ -133,7 +133,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 theme.icon_theme = nil
 
 --Vertical split ratio
-theme.master_width_factor = 0.55
+theme.master_width_factor = 0.50
 
 return theme
 
