@@ -19,12 +19,16 @@ web browser: librewolf
 
 Utilities:
 privilege elevation: su & (open)doas
+
 file manager: lf
 file sync tool: rsync
+
 image viewer: sxiv
 document viewer (pdf mainly): zathura
 music/audio player: mpd + ncmpcpp (to be reviewed; also check out beet)
 video player: mpv (to be reviewed)
+
+screenshot tool: maim (to be reviewed)
 
 encryption tool: gpg
 password manager: keepassxc
@@ -43,7 +47,7 @@ presentations: probably whatever https://lukesmith.xyz/programs/ recommends
 spreadsheets: probably whatever https://lukesmith.xyz/programs/ recommends
 
 Miscellaneous:
-screenshot tool: maim (to be reviewed)
+script checkershellcheck
 
 Places to find other useful software if necessary (probably necessary):
 https://lukesmith.xyz/programs/ and links listed on this page
