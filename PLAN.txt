@@ -20,6 +20,7 @@ web browser: librewolf
 Utilities:
 privilege elevation: su & (open)doas
 file manager: lf
+file sync tool: rsync
 image viewer: sxiv
 document viewer (pdf mainly): zathura
 music/audio player: mpd + ncmpcpp (to be reviewed; also check out beet)
