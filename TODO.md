@@ -7,3 +7,5 @@ configure bash in such a way that it stops spitting out files in $HOME
 move zsh aliases to config/shell/aliasrc
 
 replace all program names in scripts with fully qualified paths
+
+change shell colors (especially orange, it's too ugly)
