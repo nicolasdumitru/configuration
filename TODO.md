@@ -3,3 +3,5 @@ create a .zprofile in zdotdir, create .config/shell (as per voidrice) and make .
 create a private git bare repo for stuff that is not quite public but not quite secret
 
 configure bash in such a way that it stops spitting out files in $HOME
+
+move zsh aliases to config/shell/aliasrc
