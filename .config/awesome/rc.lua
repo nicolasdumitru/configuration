@@ -433,12 +433,12 @@ globalkeys = gears.table.join(
 
     -- Run Prompt
 
-    awful.key({ modkey },            "space",     function ()
-    awful.util.spawn("rofi -show drun") end,
-              {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey, "Shift" },            "space",     function ()
+    awful.key({ modkey, },            "space",     function ()
     awful.util.spawn("dmenu_run") end,
                 {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey, "Shift" },            "space",     function ()
+    awful.util.spawn("rofi -show drun") end,
+              {description = "run prompt", group = "launcher"}),
 
     
     --[[
@@ -581,7 +581,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey,  }, "w",      function (c) c:kill()                         end,
+    awful.key({ modkey, "Shift", }, "w",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey,  }, ",",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -882,7 +882,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell(" pkill picom; picom &")
 
 --Keyboard layout (with Xmodmap):
-awful.spawn.with_shell("[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap")
+awful.spawn.with_shell("/usr/bin/xmodmap ~/.config/xmodmap")
 
 --Authentication agent(gnome-polkit):
 awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")

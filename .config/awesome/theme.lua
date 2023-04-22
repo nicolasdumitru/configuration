@@ -12,7 +12,8 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 --theme.font          = "sans 8"
-theme.font          = "JetBrains Mono NL ExtraBold 9"
+--theme.font          = "JetBrains Mono NL ExtraBold 9"
+theme.font          = "JetBrains Mono ExtraBold 9"
 
 theme.bg_normal     = "#222222"
 --theme.bg_focus      = "#007acc"
@@ -101,7 +102,7 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 --theme.wallpaper = themes_path.."default/background.png"
 --theme.wallpaper = "/home/nick/Pictures/Wallpapers/blue.jpg"
-theme.wallpaper = "/home/nick/Pictures/Wallpapers/Pop-OS-Wallpapers/parabolic-antenna.jpg"
+theme.wallpaper = "~/pictures/wallpapers/parabolic-antenna.jpg"
 
 
 -- You can use your own layout icons like this:
