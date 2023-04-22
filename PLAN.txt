@@ -1,5 +1,6 @@
-OS:
+Base system:
 distro: Gentoo (hardened + SELinux)
+filesystem: btrfs
 init: runit
 shell: zsh
 
