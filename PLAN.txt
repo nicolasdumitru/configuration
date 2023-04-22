@@ -8,6 +8,7 @@ Graphical environment:
 wm: dwm
 status bar: TBD
 menu/launcher: dmenu
+screen lock utility: slock
 
 Audio:
 audio engine: pipewire
