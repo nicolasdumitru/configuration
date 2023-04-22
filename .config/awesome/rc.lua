@@ -523,14 +523,11 @@ globalkeys = gears.table.join(
 
     -- Lock the screen
     awful.key({ modkey },            "Escape",     function ()
-        awful.util.spawn("i3lock") end,
+        awful.util.spawn("slock") end,
                   {description = "Lock the screen", group = "screen"}),
     -- Take a screenshot
     awful.key({},            "Print",     function ()
-        awful.spawn.with_shell("flameshot full") end,
-                  {description = "Take a screenshot", group = "screen"}),
-    awful.key({ modkey, modkey2 },            "BackSpace",     function ()
-        awful.spawn.with_shell("flameshot full") end,
+        awful.spawn.with_shell("/usr/bin/maim pictures/screenshots/screenshot-$(date '+%Y-%m-%d-%H-%M-%S').png") end,
                   {description = "Take a screenshot", group = "screen"}),
 
     -- Volume control
