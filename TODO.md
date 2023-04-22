@@ -9,3 +9,5 @@ move zsh aliases to config/shell/aliasrc
 replace all program names in scripts with fully qualified paths
 
 change shell colors (especially orange, it's too ugly)
+
+edit awesome workspace and monitor navigation keybindings
