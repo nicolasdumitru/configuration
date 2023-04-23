@@ -24,3 +24,6 @@ alias l='ls -CF'
 
 # git config files alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# screenshot alias
+alias screenshot='/usr/bin/maim pictures/screenshots/screenshot-$(date '+%Y-%m-%d-%H-%M-%S').png'
