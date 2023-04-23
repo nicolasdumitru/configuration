@@ -4,6 +4,6 @@ configure bash in such a way that it stops spitting out files in $HOME
 
 replace all program names in scripts with fully qualified paths
 
-change shell colors (especially orange, it's too ugly)
+change shell colors (move them to xresources)
 
 edit awesome workspace and monitor navigation keybindings
