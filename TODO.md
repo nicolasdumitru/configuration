@@ -7,3 +7,5 @@ replace all program names in scripts with fully qualified paths
 change shell colors (move them to xresources)
 
 edit awesome workspace and monitor navigation keybindings
+
+start using alacritty instead of kitty (minimalism and less lines of code)
