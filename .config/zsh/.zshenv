@@ -8,8 +8,8 @@ export PATH="$PATH:$HOME/.local/go/bin"
 
 # Default programs:
 export EDITOR="nvim"
-export TERMINAL="kitty"
-export TERMINAL_PROG="kitty"
+export TERMINAL="alacritty"
+export TERMINAL_PROG="alacritty"
 export BROWSER="librewolf"
 
 # ~/ Clean-up:
