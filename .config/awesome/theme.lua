@@ -17,7 +17,7 @@ theme.font          = "JetBrains Mono ExtraBold 9"
 
 theme.bg_normal     = "#222222"
 --theme.bg_focus      = "#007acc"
-theme.bg_focus      = "#c70036"
+theme.bg_focus      = "#dc143c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
@@ -30,7 +30,7 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
 theme.border_normal = "#222222"
-theme.border_focus  = "#c70036"
+theme.border_focus  = "#dc143c"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
