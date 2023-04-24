@@ -8,4 +8,4 @@ change shell colors (move them to xresources)
 
 edit awesome workspace and monitor navigation keybindings
 
-start using alacritty instead of kitty (minimalism and less lines of code)
+make aliases for quickly switching to single monitor mode (one for the laptop monitor, one for the external) and the dual monitor mode (with fully qualified paths)
