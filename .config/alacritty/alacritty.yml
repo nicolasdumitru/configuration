@@ -220,7 +220,7 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
     text: CellBackground
-    cursor: CellForeground
+    cursor: '#ffffff'
 
   # Vi mode cursor colors
   #
@@ -230,8 +230,8 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
     text: CellBackground
-    cursor: CellForeground
-
+    #cursor: CellForeground
+    cursor: '#ffffff'
   # Search colors
   #
   # Colors used for the search bar and match highlighting.
