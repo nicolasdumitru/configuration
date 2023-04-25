@@ -11,3 +11,5 @@ edit awesome workspace and monitor navigation keybindings
 make aliases for quickly switching to single monitor mode (one for the laptop monitor, one for the external) and the dual monitor mode (with fully qualified paths)
 
 change alacritty $TERM from xterm-256 to alacritty
+
+switch to lua neovim config
