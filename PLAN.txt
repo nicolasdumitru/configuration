@@ -24,7 +24,7 @@ privilege elevation: su & (open)doas
 file manager: lf
 file sync tool: rsync
 
-image viewer: sxiv
+image viewer: (n)sxiv (sxiv is currently unmaintained, might have to find an alternative)
 document viewer (pdf mainly): zathura
 music/audio player: mpd + ncmpcpp (to be reviewed; also check out beet)
 video player: mpv (to be reviewed)
