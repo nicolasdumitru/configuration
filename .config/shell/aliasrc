@@ -18,12 +18,17 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
 # git config files alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# screenshot alias
-alias screenshot='/usr/bin/maim pictures/screenshots/screenshot-$(date '+%Y-%m-%d-%H-%M-%S').png'
+# screenshot aliases
+alias screenshot='/usr/bin/maim --format=png --quality 10 ~/pictures/screenshots/screenshot-$(date '+%Y-%m-%d-%H-%M-%S').png'
+alias screenshot-selection='/usr/bin/maim -s --format=png --quality 10 ~/pictures/screenshots/screenshot-$(date '+%Y-%m-%d-%H-%M-%S').png'
+
+#monitor mode switching aliases
+alias monitor-dual='xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1'
+alias monitor-integrated='xrandr --output eDP-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --off'
+alias monitor-external='xrandr --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --output eDP-1 --off'
