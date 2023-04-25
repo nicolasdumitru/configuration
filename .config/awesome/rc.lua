@@ -106,7 +106,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = kitty -- Set the terminal for applications that require it
+menubar.utils.terminal = alacritty -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -509,18 +509,13 @@ globalkeys = gears.table.join(
     -- Manually set up monitors
     -- dual monitors:
     awful.key({ modkey, modkey2, }, "m", function() 
-        awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &") 
+        awful.spawn.with_shell("/usr/bin/xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1") 
         end,
-            {description = "Switch to and from the dual monitor setup", group = "screen"}),
-    -- single monitor:
-    --[[awful.key({ modkey, modkey2, "Shift" }, "m", function() 
-        awful.spawn.with_shell("xrandr --output DP-0 --off --output eDP-1-1 --mode 1920x1080 --refresh 144 --rotate normal && nitrogen --restore --set-zoom-fill ~/Pictures/Wallpapers") 
-        end)]]--,
-
+            {description = "Switch to the dual monitor setup", group = "screen"}),
 
     -- Lock the screen
     awful.key({ modkey },            "Escape",     function ()
-        awful.util.spawn("slock") end,
+        awful.util.spawn("/usr/bin/slock") end,
                   {description = "Lock the screen", group = "screen"}),
     -- Take a screenshot
     awful.key({},            "Print",     function ()
@@ -529,35 +524,35 @@ globalkeys = gears.table.join(
 
     -- Volume control
     awful.key({ modkey, }, "=", function() 
-        awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%") 
         end), 
     awful.key({ modkey }, "-", function() 
-        awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%") 
         end),
     awful.key({ modkey }, "BackSpace", function() 
-        awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle") 
         end),
     awful.key({}, "XF86AudioRaiseVolume", function() 
-        awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%") 
         end), 
     awful.key({}, "XF86AudioLowerVolume", function() 
-        awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%") 
         end),
     awful.key({}, "XF86AudioMute", function() 
-        awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle") 
+        awful.spawn.with_shell("/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle") 
         end),
     -- Brightness control
     awful.key({}, "XF86MonBrightnessUp", function() 
-        awful.spawn.with_shell("brightnessctl set +10%") 
+        awful.spawn.with_shell("/usr/bin/brightnessctl set +10%") 
         end), 
     awful.key({}, "XF86MonBrightnessDown", function() 
-        awful.spawn.with_shell("brightnessctl set 10%-") 
+        awful.spawn.with_shell("/usr/bin/brightnessctl set 10%-") 
         end),
     awful.key({ modkey, modkey2 }, "=", function() 
-        awful.spawn.with_shell("brightnessctl set +10%") 
+        awful.spawn.with_shell("/usr/bin/brightnessctl set +10%") 
         end), 
     awful.key({ modkey, modkey2 }, "-", function() 
-        awful.spawn.with_shell("brightnessctl set 10%-") 
+        awful.spawn.with_shell("/usr/bin/brightnessctl set 10%-") 
         end),
 
     --Move systray to another monitor
@@ -858,11 +853,6 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
---client.connect_signal("mouse::enter", function(c)
---    c:emit_signal("request::activate", "mouse_enter", {raise = false})
---end)
-
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
@@ -872,26 +862,17 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --Template:
 --awful.spawn.with_shell("")
 
+--Start in dual monitor mode by default
+awful.spawn.with_shell("/usr/bin/xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1")
+
 --Compositor (picom):
-awful.spawn.with_shell(" pkill picom; picom &")
+awful.spawn.with_shell(" pkill picom; /usr/bin/picom &")
+
+--Internet connection tray applet (nm-applet):
+awful.spawn.with_shell("pkill nm-applet; /usr/bin/nm-applet &")
 
 --Keyboard layout (with Xmodmap):
 awful.spawn.with_shell("/usr/bin/xmodmap ~/.config/xmodmap")
 
 --Authentication agent(gnome-polkit):
-awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
-
---Flameshot
-awful.spawn.with_shell("pkill flameshot; flameshot")
-
---Internet connection tray applet (nm-applet):
-awful.spawn.with_shell("pkill nm-applet; nm-applet &")
-
-
---Autoconfigure screens for my personal setup
---awful.spawn.with_shell("cd ~/.config/awesome && chmod +x dualmonitorDisplayPort.sh && ./dualmonitorDisplayPort.sh &")
---awful.spawn.with_shell("pkill dualmonitorHDMI; cd ~/.config/awesome; ./dualmonitorHDMI.sh &")
---awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
---awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
---awful.spawn.single_instance("bash | ./.config/awesome/dualmonitorHDMIswitcheroo.sh &")
-awful.spawn.with_shell("xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1")
+--awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
