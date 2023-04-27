@@ -9,5 +9,3 @@ make aliases for quickly switching to single monitor mode (one for the laptop mo
 change alacritty $TERM from xterm-256 to alacritty
 
 fontconfig arch wiki
-
-alacritty font
