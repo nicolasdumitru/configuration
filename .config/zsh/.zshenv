@@ -17,11 +17,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
-#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-#export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
+
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+
+export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+#export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+#export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
