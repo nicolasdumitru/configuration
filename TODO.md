@@ -11,3 +11,5 @@ change alacritty $TERM from xterm-256 to alacritty
 fontconfig arch wiki
 
 change the system default browser to librewolf
+
+get rid of nix and what it added to shell config files
