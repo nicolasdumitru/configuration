@@ -20,6 +20,9 @@ fi
 # ls aliases
 alias la='ls -A'
 
+# alias to prevent bash from creating random history files
+alias bash='bash --init-file ~/.bash_profile'
+
 # git config files aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
