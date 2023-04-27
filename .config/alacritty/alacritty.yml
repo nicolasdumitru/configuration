@@ -196,12 +196,12 @@
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+# Colors
 colors:
   # Default colors
   primary:
-    background: '#1d1f21'
-    foreground: '#c5c8c6'
+    background: '#1d1c1c'
+    foreground: '#dddddd'
 
     # Bright and dim foreground colors
     #
@@ -229,7 +229,7 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
-    text: CellBackground
+    text: '#1d1c1c'
     #cursor: CellForeground
     cursor: '#ffffff'
   # Search colors
