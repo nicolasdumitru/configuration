@@ -240,36 +240,12 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 
--- Defaults:
---[[
-              {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-              {description = "go back", group = "tag"}),
-
-    awful.key({ modkey,           }, "j",
-        function ()
-            awful.client.focus.byidx( 1)
-        end,
-        {description = "focus next by index", group = "client"}
-    ),
-    awful.key({ modkey,           }, "k",
-        function ()
-            awful.client.focus.byidx(-1)
-        end,
-        {description = "focus previous by index", group = "client"}
-    ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
---]]
-
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, ";",   awful.tag.viewprev,
+    awful.key({ modkey, modkey2 }, "h",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "'",  awful.tag.viewnext,
+    awful.key({ modkey, modkey2 }, "l",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     --awful.key({ modkey,           }, "Tab", awful.tag.history.restore,
     --          {description = "go back", group = "tag"}),
@@ -338,7 +314,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
 
-    awful.key({ modkey, "Shift" }, "'", function()
+    awful.key({ modkey, modkey2, "Shift" }, "l", function()
                 local screen = awful.screen.focused()
                 local t = screen.selected_tag
                 if t then
@@ -352,7 +328,7 @@ globalkeys = gears.table.join(
               end,
               {description = "move focused client to next tag and view tag", group = "tag"}),
           
-    awful.key({ modkey, "Shift" }, ";", function()
+    awful.key({ modkey, modkey2, "Shift" }, "h", function()
                 local screen = awful.screen.focused()
                 local t = screen.selected_tag
                 if t then
@@ -481,10 +457,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey, modkey2, },            "f",     function ()
         awful.util.spawn("nautilus") end,
                   {description = "Open a file manager (nautilus)", group = "launcher"}),
-    --Settings
-    awful.key({ modkey, modkey2, },            "s",     function ()
-        awful.util.spawn("gnome-control-center") end,
-                  {description = "Open a settings menu (gnome settings)", group = "launcher"}),
     
     --[[
     awful.key({ modkey }, "x",
@@ -690,18 +662,7 @@ for i = 1, 9 do
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
-        --[[
-            awful.key({ modkey, "Shift" }, "[" .. i + 9,
-                      function ()
-                          if client.focus then
-                              local tag = client.focus.screen.tags[i-1]
-                            if tag then
-                                client.focus:move_to_tag(tag)
-                            end
-                        end
-                    end,
-                    {description = "move focused client previous tag #", group = "tag"}),
-            ]]--      
+
         -- Toggle tag on focused client.
         awful.key({ modkey, modkey2, "Shift" }, "#" .. i + 9,
                   function ()
