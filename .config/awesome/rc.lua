@@ -55,7 +55,7 @@ awful.mouse.snap.edge_enabled = true
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("codium") or "nvim"
+editor = os.getenv("nvim") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -230,14 +230,6 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
--- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end)
-    --awful.button({ }, 4, awful.tag.viewnext),
-    --awful.button({ }, 5, awful.tag.viewprev)
-))
--- }}}
-
 -- {{{ Key bindings
 
 globalkeys = gears.table.join(
@@ -247,8 +239,6 @@ globalkeys = gears.table.join(
               {description = "view previous", group = "tag"}),
     awful.key({ modkey, modkey2 }, "l",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
-    --awful.key({ modkey,           }, "Tab", awful.tag.history.restore,
-    --          {description = "go back", group = "tag"}),
 
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -262,8 +252,6 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-    --          {description = "show main menu", group = "awesome"}),
 
     -- Moving window focus works between desktops
     awful.key({ modkey,           }, "j", function (c)
@@ -342,16 +330,6 @@ globalkeys = gears.table.join(
               end,
               {description = "move focused client to previous tag and view tag", group = "tag"}),
 
-    --[[awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "go back", group = "client"}),
-        ]]--
-
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -404,25 +382,10 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, },            "space",     function ()
     awful.util.spawn("dmenu_run") end,
-                {description = "run prompt", group = "launcher"}),
+                {description = "run prompt (dmenu)", group = "launcher"}),
     awful.key({ modkey, "Shift" },            "space",     function ()
     awful.util.spawn("rofi -show drun") end,
-              {description = "run prompt", group = "launcher"}),
-
-    
-    --[[
-        awful.util.spawn("dmenu_run") end,
-              {description = "run prompt", group = "launcher"}),
-
-              dmenu_run
-    ]]
-
-    -- Example:
-    --[[
-        awful.key({ modkey,random key(s) },            "key you want to use",     function ()
-        awful.util.spawn("random app") end,
-                  {description = "Open a random app", group = "launcher"}),
-    ]]--
+              {description = "run prompt (rofi)", group = "launcher"}),
 
     --Template
     --[[
