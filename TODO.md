@@ -8,4 +8,6 @@ fontconfig arch wiki
 
 change the system default browser to librewolf
 
+configure alacritty vim mode
+
 get rid of nix and what it added to shell config files
