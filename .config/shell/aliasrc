@@ -17,6 +17,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias ip='ip --color=auto'
 fi
 
+# neovim alias
+alias v='nvim'
+
 # ls aliases
 alias la='ls -A'
 
