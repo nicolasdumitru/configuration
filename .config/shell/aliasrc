@@ -6,7 +6,7 @@ alias history="history 0"
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-		alias ls='ls -l --group-directories-first --color=auto'
+		alias ls='ls -lh --group-directories-first --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 
