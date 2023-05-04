@@ -16,8 +16,8 @@ clean up newsboat config dir
 
 learn how to use lazy neovim plugin manager
 
-enable zsh syntax highlighting on arch
-
-make zshrc more distro agnostic
+re-enable old zsh syntax color settings
 
 enable neovim clipboard
+
+change black and white terminal colors
