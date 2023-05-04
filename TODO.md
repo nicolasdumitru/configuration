@@ -15,3 +15,7 @@ get rid of nix and what it added to shell config files
 clean up newsboat config dir
 
 learn how to use lazy neovim plugin manager
+
+enable zsh syntax highlighting on arch
+
+make zshrc more distro agnostic
