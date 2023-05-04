@@ -55,7 +55,7 @@ awful.mouse.snap.edge_enabled = true
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("nvim") or "vi"
+editor = os.getenv("nvim") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -406,10 +406,11 @@ globalkeys = gears.table.join(
         awful.util.spawn("thunderbird") end,
                   {description = "Open an email client (Thunderbird)", group = "launcher"}),
 
-    -- VsCodium
+    -- Neovim
     awful.key({ modkey },            "v",     function ()
-        awful.util.spawn("codium") end,
-                  {description = "Open a code editor (VsCodium)", group = "launcher"}),
+					awful.util.spawn("alacritty -e nvim") end,
+
+                  {description = "Open a text editor (Neovim)", group = "launcher"}),
 
     -- KeePassXC
     awful.key({ modkey, modkey2, },            "p",     function ()
