@@ -29,6 +29,3 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
 #export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 #export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
-
-# added by Nix installer
-if [ -e /home/nick/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nick/.nix-profile/etc/profile.d/nix.sh; fi
