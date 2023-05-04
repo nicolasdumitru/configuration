@@ -19,3 +19,5 @@ learn how to use lazy neovim plugin manager
 enable zsh syntax highlighting on arch
 
 make zshrc more distro agnostic
+
+enable neovim clipboard
