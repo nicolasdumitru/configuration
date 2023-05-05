@@ -1,5 +1,3 @@
-create a private git bare repo for stuff that is not quite public but not quite secret
-
 change shell colors (move them to xresources)
 
 fontconfig arch wiki
