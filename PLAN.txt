@@ -2,13 +2,14 @@ Base system:
 distro: Gentoo (hardened + SELinux)
 filesystem: btrfs
 init: runit
-shell: zsh
+shell: zsh (zsh-syntax-highlighting, zsh-autosuggestions)
 
 Graphical environment:
 wm: dwm
 status bar: TBD
 menu/launcher: dmenu
 screen lock utility: slock
+display setting utility: xrandr
 
 Audio:
 audio engine: pipewire
@@ -48,7 +49,9 @@ presentations: probably whatever https://lukesmith.xyz/programs/ recommends
 spreadsheets: probably whatever https://lukesmith.xyz/programs/ recommends
 
 Miscellaneous:
-script checkershellcheck
+script checker: shellcheck
+keyboard layout setter: xmodmap
+clipboard tool: xclip
 
 Places to find other useful software if necessary (probably necessary):
 https://lukesmith.xyz/programs/ and links listed on this page
