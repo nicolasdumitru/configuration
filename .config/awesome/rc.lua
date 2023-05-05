@@ -383,13 +383,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, },            "space",     function ()
     awful.util.spawn("dmenu_run") end,
                 {description = "run prompt (dmenu)", group = "launcher"}),
-    awful.key({ modkey, "Shift" },            "space",     function ()
-    awful.util.spawn("rofi -show drun") end,
-              {description = "run prompt (rofi)", group = "launcher"}),
 
     --Template
     --[[
-        awful.key({ modkey, },            "",     function ()
+    awful.key({ modkey, },            "",     function ()
         awful.util.spawn("") end,
                   {description = "", group = "launcher"}),
     ]]--
@@ -406,18 +403,21 @@ globalkeys = gears.table.join(
         awful.util.spawn("thunderbird") end,
                   {description = "Open an email client (Thunderbird)", group = "launcher"}),
 
-    -- Neovim
+    -- Text Editor
     awful.key({ modkey },            "v",     function ()
 					awful.util.spawn("alacritty -e nvim") end,
 
                   {description = "Open a text editor (Neovim)", group = "launcher"}),
-
-    -- KeePassXC
+		-- RSS reader
+    awful.key({ modkey, },            "n",     function ()
+        awful.util.spawn("alacritty -e newsboat") end,
+                  {description = "Open an RSS/Atom feed reader (Newsboat)", group = "launcher"}),
+    -- Password Manager
     awful.key({ modkey, modkey2, },            "p",     function ()
         awful.util.spawn("keepassxc") end,
                   {description = "Open a password manager (KeePassXC)", group = "launcher"}),
 
-    -- File manager (Nautilus)
+    -- File manager
     awful.key({ modkey, modkey2, },            "f",     function ()
         awful.util.spawn("nautilus") end,
                   {description = "Open a file manager (nautilus)", group = "launcher"}),
@@ -527,19 +527,7 @@ clientkeys = gears.table.join(
             c:raise()
         end ,
         {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
-        function (c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end ,
-        {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end ,
-        {description = "(un)maximize horizontally", group = "client"}),
-    
+
     -- Resize windows
     awful.key({ modkey, modkey2 }, "Up", function (c)
         if c.floating then
