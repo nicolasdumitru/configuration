@@ -2,6 +2,3 @@
 *.db
 *.db.lock
 *.search
-
-# Ignore particular files:
-.config/newsboat/urls
