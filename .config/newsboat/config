@@ -16,3 +16,4 @@ bind-key N prev-unread
 bind-key U show-urls
 bind-key x pb-delete
 
+browser librewolf
