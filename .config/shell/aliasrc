@@ -17,14 +17,18 @@ if [ -x /usr/bin/dircolors ]; then
     alias ip='ip --color=auto'
 fi
 
-# neovim alias
-alias v='nvim'
+# alias to prevent bash from creating random history files
+alias bash='bash --init-file ~/.bash_profile'
 
 # ls aliases
 alias la='ls -A'
 
-# alias to prevent bash from creating random history files
-alias bash='bash --init-file ~/.bash_profile'
+# sudo to doas transition (just in case)
+alias sudo='doas'
+alias sudoedit='doas nvim'
+
+# neovim alias
+alias v='nvim'
 
 # git config files aliases
 alias config='/usr/bin/git --git-dir=$HOME/.configuration/ --work-tree=$HOME'
