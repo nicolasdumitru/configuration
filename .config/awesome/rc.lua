@@ -412,6 +412,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, },            "n",     function ()
         awful.util.spawn("alacritty -e newsboat") end,
                   {description = "Open an RSS/Atom feed reader (Newsboat)", group = "launcher"}),
+		-- Music player
+    awful.key({ modkey, modkey2 },            "m",     function ()
+        awful.util.spawn("alacritty -e ncmpcpp") end,
+                  {description = "Open a music player (ncmpcpp)", group = "launcher"}),
     -- Password Manager
     awful.key({ modkey, modkey2, },            "p",     function ()
         awful.util.spawn("keepassxc") end,
@@ -440,7 +444,7 @@ globalkeys = gears.table.join(
 
     -- Manually set up monitors
     -- dual monitors:
-    awful.key({ modkey, modkey2, }, "m", function() 
+    awful.key({ modkey, modkey2, "Shift" }, "m", function() 
         awful.spawn.with_shell("/usr/bin/xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1") 
         end,
             {description = "Switch to the dual monitor setup", group = "screen"}),
