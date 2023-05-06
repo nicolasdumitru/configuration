@@ -10,6 +10,6 @@ change black and white terminal colors
 
 change zsh interactive comment color
 
-configure mpd and ncmpcpp to use the correct directories
+configure mpd and ncmpcpp to use the correct directories/files/paths and save the configs
 
 make sure mpd is started by the init system as the user, not root (it should already be ok)
