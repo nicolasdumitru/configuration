@@ -24,8 +24,8 @@ alias bash='bash --init-file ~/.bash_profile'
 alias la='ls -A'
 
 # sudo to doas transition (just in case)
-alias sudo='doas'
-alias sudoedit='doas nvim'
+#alias sudo='doas'
+#alias sudoedit='doas nvim'
 
 # neovim alias
 alias v='nvim'
