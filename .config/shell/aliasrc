@@ -20,6 +20,11 @@ fi
 # alias to prevent bash from creating random history files
 alias bash='bash --init-file ~/.bash_profile'
 
+# safe(r) file operations
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 # ls aliases
 alias la='ls -A'
 
