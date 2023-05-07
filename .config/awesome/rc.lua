@@ -59,31 +59,15 @@ editor = os.getenv("nvim") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 modkey2 = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    --awful.layout.suit.floating,
     awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
+    --awful.layout.suit.floating,
 }
 -- }}}
 
@@ -289,12 +273,10 @@ globalkeys = gears.table.join(
         awful.client.swap.global_bydirection("up")
       end,
       {description = "swap with up client", group = "client"}),
-    --[[
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
+    awful.key({ modkey, "Control"   }, "Tab", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+    awful.key({ modkey, "Control", "Shift"   }, "Tab", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-              ]]--
     awful.key({ modkey, }, "]", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, }, "[", function () awful.screen.focus_relative(-1) end,
@@ -338,24 +320,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "Escape", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    --[[awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-              {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
-              {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
-              {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
-              {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
-              {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
-              {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
-              {description = "select next", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
-              {description = "select previous", group = "layout"}),
---]]
-
     -- Master and stack manipulation
     awful.key({ modkey, }, ".",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -384,62 +348,45 @@ globalkeys = gears.table.join(
     awful.util.spawn("dmenu_run") end,
                 {description = "run prompt (dmenu)", group = "launcher"}),
 
-    --Template
-    --[[
-    awful.key({ modkey, },            "",     function ()
-        awful.util.spawn("") end,
-                  {description = "", group = "launcher"}),
-    ]]--
-
-    --Browser
-    awful.key({ modkey, modkey2 },            "b",     function ()
-        awful.util.spawn("brave-browser") end,
-                  {description = "Open a browser (Brave)", group = "launcher"}),
-    awful.key({ modkey, },            "b",     function ()
-        awful.util.spawn("librewolf") end,
-                  {description = "Open a browser (Librewolf)", group = "launcher"}),
-
-    awful.key({ modkey, },            "e",     function ()
-        awful.util.spawn("thunderbird") end,
-                  {description = "Open an email client (Thunderbird)", group = "launcher"}),
-
     -- Text Editor
     awful.key({ modkey },            "v",     function ()
 					awful.util.spawn("alacritty -e nvim") end,
-
                   {description = "Open a text editor (Neovim)", group = "launcher"}),
+    -- Browser
+    awful.key({ modkey, },            "b",     function ()
+        awful.util.spawn("librewolf") end,
+                  {description = "Open a browser (Librewolf)", group = "launcher"}),
+    -- Password Manager
+    awful.key({ modkey, },            "p",     function ()
+        awful.util.spawn("keepassxc") end,
+                  {description = "Open a password manager (KeePassXC)", group = "launcher"}),
 		-- RSS reader
     awful.key({ modkey, },            "n",     function ()
         awful.util.spawn("alacritty -e newsboat") end,
                   {description = "Open an RSS/Atom feed reader (Newsboat)", group = "launcher"}),
+		-- Torrent client
+    awful.key({ modkey, modkey2 },            "t",     function ()
+        awful.util.spawn("transmission-gtk") end,
+                  {description = "Open a torrent client (Transmission)", group = "launcher"}),
+		-- Email client
+    awful.key({ modkey, },            "e",     function ()
+        awful.util.spawn("thunderbird") end,
+                  {description = "Open an email bloatware (Thunderbird)", group = "launcher"}),
 		-- Music player
     awful.key({ modkey, modkey2 },            "m",     function ()
         awful.util.spawn("alacritty -e ncmpcpp") end,
                   {description = "Open a music player (ncmpcpp)", group = "launcher"}),
-    -- Password Manager
-    awful.key({ modkey, modkey2, },            "p",     function ()
-        awful.util.spawn("keepassxc") end,
-                  {description = "Open a password manager (KeePassXC)", group = "launcher"}),
-
+		-- System monitor
+    awful.key({ modkey, modkey2 },            "s",     function ()
+        awful.util.spawn("alacritty -e btop") end,
+                  {description = "Open a system monitor (btop)", group = "launcher"}),
     -- File manager
     awful.key({ modkey, modkey2, },            "f",     function ()
-        awful.util.spawn("nautilus") end,
-                  {description = "Open a file manager (nautilus)", group = "launcher"}),
+        awful.util.spawn("alacritty -e lf") end,
+                  {description = "Open a file manager (lf)", group = "launcher"}),
     
-    --[[
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"}),
-    ]]--
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "r", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
     -- Manually set up monitors
@@ -783,21 +730,14 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 --Autostart apps
-
---Template:
---awful.spawn.with_shell("")
-
 --Start in dual monitor mode by default
 awful.spawn.with_shell("/usr/bin/xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1")
 
 --Compositor (picom):
-awful.spawn.with_shell(" pkill picom; /usr/bin/picom &")
+awful.spawn.with_shell("/usr/bin/picom &")
 
 --Internet connection tray applet (nm-applet):
-awful.spawn.with_shell("pkill nm-applet; /usr/bin/nm-applet &")
+awful.spawn.with_shell("/usr/bin/nm-applet &")
 
 --Keyboard layout (with Xmodmap):
 awful.spawn.with_shell("/usr/bin/xmodmap ~/.config/xmodmap")
-
---Authentication agent(gnome-polkit):
---awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
