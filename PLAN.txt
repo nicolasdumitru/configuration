@@ -52,6 +52,7 @@ Miscellaneous:
 script checker: shellcheck
 keyboard layout setter: xmodmap
 clipboard tool: xclip
+brightness tool: brightnessctl
 
 Places to find other useful software if necessary (probably necessary):
 https://lukesmith.xyz/programs/ and links listed on this page
