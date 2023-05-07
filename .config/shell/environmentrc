@@ -2,7 +2,7 @@
 
 # Additions to $PATH:
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/go/bin"
+#export PATH="$PATH:$HOME/.local/go/bin"
 
 # Default programs:
 export EDITOR="nvim"
