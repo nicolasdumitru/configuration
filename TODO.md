@@ -12,3 +12,5 @@ learn how to use lazy neovim plugin manager
 change zsh interactive comment color
 
 configure ncmpcpp keybindings
+
+set up CUPS and SANE
