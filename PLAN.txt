@@ -21,6 +21,10 @@ web browser: librewolf
 
 Utilities:
 privilege elevation: su & (open)doas
+firewall: ufw
+keyboard layout setter: xmodmap
+clipboard tool: xclip
+brightness tool: brightnessctl (check out "light" as an alternative)
 
 file manager: lf
 file sync tool: rsync
@@ -50,9 +54,6 @@ spreadsheets: probably whatever https://lukesmith.xyz/programs/ recommends
 
 Miscellaneous:
 script checker: shellcheck
-keyboard layout setter: xmodmap
-clipboard tool: xclip
-brightness tool: brightnessctl
 
 Places to find other useful software if necessary (probably necessary):
 https://lukesmith.xyz/programs/ and links listed on this page
