@@ -15,10 +15,9 @@ local theme = {}
 --theme.font          = "JetBrains Mono NL ExtraBold 9"
 theme.font          = "JetBrains Mono ExtraBold 9"
 
-theme.bg_normal     = "#222222"
---theme.bg_focus      = "#007acc"
+theme.bg_normal     = "#1a1a1a"
 theme.bg_focus      = "#dc143c"
-theme.bg_urgent     = "#ff0000"
+theme.bg_urgent     = "#32db7a"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
